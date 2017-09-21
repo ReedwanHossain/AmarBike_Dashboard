@@ -1,0 +1,40 @@
+<div class="content" ng-controller="CategoyAddController">
+
+    <div class="wrapper">
+       <div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="card">
+
+
+                        <div class="col-md-12">
+                             <form ng-submit="set_category()">
+                                <div class="form-group">
+                                    <input type="text" name="type" class="form-control" placeholder="Category" ng-model="new_category">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12">
+                            <form ng-submit="set_sub_category()">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="btn-info" ng-model="address.category" ng-init="address.category = categories[0]" ng-options="cat.type for cat in categories">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                     <input type="text" name="subtype" class="form-control" placeholder="Sub Category" ng-model="address.subcategory">
+                                </div>
+
+                                <button type="submit" class="btn btn-denger">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,23 @@
+ <div class="landing-page">
+
+
+    	<div class="">
+        <map center="23.8103, 90.4125" zoom="13" style="height:100vh;"  gestureHandling: 'greedy' default-style="false">
+          <marker ng-repeat="bike in bikes" id="{{bike.id}}" position="{{bike.lat}}, {{bike.lon}}" on-click="showDetail(bike)" icon="{url:'/assets/img/{{bike.isHired}}.png',scaledSize:[40,40]}" label="{{bike.id.toSring}}" scrollwheel="true"  gestureHandling= 'greedy'></marker>
+           <info-window id="foo-iw">
+       		 <div ng-non-bindable="">
+            <b>Name</b>: {{bike.name}}<br/>
+	          <b>Number</b>: {{bike.bike_number}}<br/>
+       		 </div>
+     	 </info-window>
+        </map>
+        <hr>
+        </div>
+
+    </div>
+
+</div>
+
+			</section>
+		</div>
+</div>

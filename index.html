@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" ng-app="amarbike" ng-cloak>
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>AmarBike | Admin</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Bootstrap core CSS     -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--  Material Dashboard CSS    -->
+    <link href="/assets/css/material-dashboard.css" rel="stylesheet"/>
+    <link href="/assets/css/autocomplete.css" rel="stylesheet"/>
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="/assets/css/demo.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+     <link href="/assets/css/sweetalert.css" rel="stylesheet" />
+     <!-- LeafLet, Marker Cluster Styles -->
+     <link data-require="leaflet@*" data-semver="0.7.3" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+      <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+	  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
+    <!--     Fonts and icons     -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+
+    <!--   Core JS Files   -->
+	<script src="/assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/assets/js/material.min.js" type="text/javascript"></script>
+
+	<script src="/assets/js/chartist.min.js"></script>
+
+	<!--  Notifications Plugin    -->
+	<script src="/assets/js/bootstrap-notify.js"></script>
+
+	<!--  Google Maps Plugin    -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpyLhjbDBsuWh5EQMloeOOP7VXZpGCK_o&libraries=placeses,visualization,drawing,geometry,places"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+	<!-- Material Dashboard javascript methods -->
+	<script src="/assets/js/material-dashboard.js"></script>
+
+	<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+	<script src="/assets/js/demo.js"></script>
+
+	<!-- ng files -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-filter/0.4.9/angular-filter.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.3.0/ui-bootstrap-tpls.min.js"></script>
+	<script src="assets/js/ngStorage.js" type="text/javascript"></script>
+	<script src="assets/js/sweetalert.min.js" type="text/javascript"></script>
+	<script src="assets/js/angular-table.min.js" type="text/javascript"></script>
+	<script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+	</script>
+	<script src="/assets/js/autocomplete.js" type="text/javascript"></script>
+	<script src="/assets/js/fm-timepicker.tpls.js" type="text/javascript"></script>
+	<script src="/assets/js/hamster.js" type="text/javascript"></script>
+
+	<!--  Charts Plugin -->
+	<!-- Custom Angular file -->
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/directives/sidebar-init.js"></script>
+	<script src="assets/js/controllers/category-add.js"></script>
+	<script src="assets/js/controllers/main.js"></script>
+	<script src="assets/js/controllers/dashboard.js"></script>
+	<script src="assets/js/controllers/gps-track.js"></script>
+	<script src="assets/js/controllers/ride-log.js"></script>
+	<script src="assets/js/controllers/ride-log-booked.js"></script>
+	<script src="assets/js/controllers/ride-log-refused.js"></script>
+	<script src="assets/js/controllers/ride-log-available.js"></script>
+	<script src="assets/js/controllers/ride-log-finished.js"></script>
+	<script src="assets/js/controllers/ride-log-cancelled.js"></script>
+	<script src="assets/js/controllers/ride-ongoing.js"></script>
+	<script src="assets/js/controllers/rider-list.js"></script>
+	<script src="assets/js/controllers/user-log.js"></script>
+	<script src="assets/js/controllers/user-detail.js"></script>
+	<script src="assets/js/controllers/set-ride.js"></script>
+	<script src="assets/js/controllers/update-ride.js"></script>
+	<script src="assets/js/service/ride-update.js"></script>
+	<script src="assets/js/service/auth.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+			// Javascript method's body can be found in assets/js/demos.js
+        	demo.initDashboardPageCharts();
+
+    	});
+	</script>
+
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+	   <div ui-view></div>
+	</div>
+</body>
+
+
+
+</html>

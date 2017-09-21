@@ -1,0 +1,113 @@
+<div ng-controller="UserDetailController" style="width:100%; background: white; background-size: cover;">
+    <div class="tab-pane active work" id="work">
+                        <div class="row">
+                            <div class="col-md-7 col-md-offset-1">
+                                <h3 class="title">{{userinfo.name}}</h3>
+                                <div class="row collections">
+                                    <div class="col-md-6">
+                                        <div class="card card-background" style="background-image: url('../assets/img/examples/chris4.jpg')">
+                                            <a href="#pablo"></a>
+                                            <div class="card-content">
+                                                <label class="label label-primary">user id</label>
+                                                <a href="#pablo">
+                                                    <h2 class="card-title">{{userinfo.id}}</h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card card-background" style="background-image: url('../assets/img/examples/chris6.jpg')">
+                                            <a href="#pablo"></a>
+                                            <div class="card-content">
+                                                <label class="label label-danger">user point</label>
+                                                <a href="#pablo">
+                                                    <h2 class="card-title">{{userinfo.total_points}}</h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card card-background" style="background-image: url('../assets/img/examples/chris5.jpg')">
+                                            <a href="#pablo"></a>
+                                            <div class="card-content">
+                                                <label class="label label-info">user type</label>
+                                                <a href="#pablo">
+                                                    <h2 class="card-title">{{userinfo.userType}}</h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card card-background" style="background-image: url('../assets/img/examples/chris1.jpg')">
+                                            <a href="#pablo"></a>
+                                            <div class="card-content">
+                                                <label class="label label-success">ref code</label>
+                                                <a href="#pablo">
+                                                    <h2 class="card-title">{{userinfo.ref_code}}</h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1 stats">
+                                <h4 class="title">Basic Info</h4>
+                                <ul class="list-unstyled">
+                                    <li><b>Email: </b>{{userinfo.email}}</li>
+                                    <li><b>Phone: </b>{{userinfo.phone}}</li>
+                                    <li><b>Device ID: </b>{{userinfo.device_ID}}</li>
+                                    <li><b>Account Created: </b>{{userinfo.created_at}}</li>
+                                </ul>
+                               <!--  <hr>
+                                <h4 class="title">About his Work</h4>
+                                <p class="description">French luxury footwear and fashion. The footwear has incorporated shiny, red-lacquered soles that have become his signature.</p> -->
+                                <hr>
+                                <h4 class="title">Badges</h4>
+                                <span class="label label-primary">rookie</span>
+                                <span class="label label-rose">pro</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4 class="title">Places</h4>
+                             <table class="table table-hover">
+                   <thead>
+                      <tr>
+                        <th class="text-left">Address</th>
+                        <th class="text-left">City</th>
+                        <th class="text-left">Area</th>
+                        <th class="text-left">Type</th>
+                        <th class="text-left">Code</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="userplace in filtereduserplc">
+                            <td class="text-left">{{userplace.Address}}</td>
+                            <td class="text-left">{{userplace.city}}</td>
+                            <td class="text-left">{{userplace.area}}</td>
+                            <td class="text-left">{{userplace.subType}}</td>
+                            <td class="text-left">{{userplace.uCode}}</td>
+                          <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title=""  ng-click="delete_location(location.uCode)">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                        </td>
+
+                           
+                        </tr>
+                    </tbody>
+               </table>
+                <div class="pagigid" data-pagination="" data-num-pages="numPages()" 
+                    data-current-page="currentPage" data-max-size="maxSize"  
+                    data-boundary-links="true">
+                
+                </div>
+                        </div>
+                    </div>
+</div>

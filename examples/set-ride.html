@@ -1,0 +1,74 @@
+ <div class="content">
+
+     <div class="header header-filter">
+            <div class="container-fluid">
+                <div class="card" >
+                  <center><h3>Set Ride for uid #</h3></center>
+                    <div>
+                       <div class="col-md-8" >
+                            <map zoom="14" style="height: 460px" center="{{ride.source.lat}},{{ride.source.lng}}">
+                                <marker ng-repeat="pos in positions" position="{{ride.source.lat}},{{ride.source.lng}}" id="{{pos.index}}" title="{{pos.title}}" on-dragend="pin_mooved(this)" draggable="true" icon="{{pos.icon}}">
+                                <directions
+                                  draggable="false"
+                                  travel-mode="DRIVING"
+                                  origin="{{source}}"
+                                  destination="{{destination}}">
+                                </directions>
+                            </map>
+                       </div>
+                       <div class="col-md-4">
+                           <form name="myForm" ng-submit="setRide()">
+                                   
+                                   <div class="form-group">
+                                   <label>Name</label>
+                                      <autocomplete ng-model="ride.pname" data="passenger_name" required></autocomplete>
+                                  </div>
+                                    
+                                <div class="form-group">
+                                   <label>Phone</label>
+                                     <input type="text" ng-model="ride.pphone" required>
+                                  </div>
+
+                                  <div class="form-group">
+                                   <label>Pick-up</label>
+                                     <input  class="form-control" places-auto-complete size=80 component-restrictions="{country:'bd'}"
+                                 ng-model="ride.pickup" on-place-changed="getdirection()" required/>
+                                  </div>
+                                  <div class="form-group">
+                                   <label>Drop-off</label>
+                                   <input  class="form-control" places-auto-complete size=80 component-restrictions="{country:'bd'}"
+                                ng-model="ride.dropoff" required/>
+                                  </div> 
+
+                                  <div class="form-group">
+                                      <label>Set Time </label>
+                                      <!--  <input type="text" class="form-control" ng-model="ride.time"/> -->
+                                      <fm-timepicker id="time"
+                                         name="time"
+                                         fm-style="style"
+                                         fm-start-time="start"
+                                         fm-end-time="end"
+                                         fm-interval="interval"
+                                         fm-large-interval="largeInterval"
+                                         fm-format="timeFormat"
+                                         fm-is-open="isOpen"
+                                         fm-disabled="disabled"
+                                         fm-strict="strict"
+                                         ng-model="ride.time"
+                                         required>
+                                      </fm-timepicker>
+                                  </div>
+                                  
+                        
+
+                                 <!--  <button class="btn btn-denger" ng-click="getdirection()">GET Direction</button> -->
+                                  <button type="submit" class="btn btn-info" ng-disabled="myForm.$invalid">SET Ride</button>
+                            </form>
+                       </div>
+                       <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,51 @@
+<div ng-controller="UserLogController" class="content" style="background:white">
+    <div>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                   <thead>
+                      <tr>
+                        <th class="text-left">ID</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Email</th>
+                        <th class="text-left">Phone</th>
+                        <th class="text-left">User Type</th>
+                        <th class="text-left">Points</th>
+                        <th class="text-left">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="listuser in filteredusers">
+                            <td class="text-left">{{listuser.id}}</td>
+                            <td class="text-left">{{listuser.name}}</td>
+                            <td class="text-left">{{listuser.email}}</td>
+                            <td class="text-left">{{listuser.phone}}</td>
+                            <td class="text-left">{{listuser.userType}}</td>
+                            <td class="text-left">{{listuser.total_points}}</td>
+                    
+                          <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="" ng-click="user_detail(listuser.id)">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title=""  ng-click="delete_location(listuser.uCode)">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                        </td>
+
+                           
+                        </tr>
+                    </tbody>
+               </table>
+               <div class="pagigid" data-pagination="" data-num-pages="numPages()" 
+                    data-current-page="currentPage" data-max-size="maxSize"  
+                    data-boundary-links="true">
+                </div>
+
+            </div>
+
+    </div>
+
+</div>
