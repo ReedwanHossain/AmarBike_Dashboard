@@ -5,6 +5,7 @@
     //All Api urls.............................................................
 
     app.constant('urls', {
+        AUTH_URI : 'https://amarbike.tk/api/auth/login',
         RIDE_LOG : 'http://amarbike.tk/api/get/available',
         GPS_TRACK : 'http://amarbike.tk/api/get/location',
         GET_PASSENGER : 'http://amarbike.tk/api/get/passenger',
@@ -23,6 +24,8 @@
         REFUSE_RIDE : 'https://amarbike.tk/api/ride/refuse/',
         CANCEL_RIDE : 'https://amarbike.tk/api/ride/cancel/',
         UPDATE_RIDE : 'https://amarbike.tk/api/ride/edit/',
+        APPROVE_DRIVER : 'https://amarbike.tk/api/driver/approve/',
+
     });
 
 
@@ -30,7 +33,7 @@
 
     app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
-        $urlRouterProvider.otherwise('/dashboard');
+        $urlRouterProvider.otherwise('/signin');
 
         $stateProvider
 
@@ -160,19 +163,19 @@
         }])
 
 
-     });//.run(function ($rootScope, $state, $localStorage, $location) {
-     //            $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-     //                        if ($localStorage.token == null) {
-     //                             if (toState.authentication) {
-     //                                 $state.transitionTo("signin");
-     //                                 event.preventDefault();
-     //                             }
-     //                         }else {
-     //                            if (toState.name == "signin" || toState.name == "signup") {
-     //                                $location.path('/dashboard');
-     //                            };
-     //                         };
-     //             });
-     //     });
+     }).run(function ($rootScope, $state, $localStorage, $location) {
+                $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
+                             if ($localStorage.token == null) {
+                                  if (toState.authentication) {
+                                      $state.transitionTo("signin");
+                                      event.preventDefault();
+                                  }
+                              }else {
+                                 if (toState.name == "signin" || toState.name == "signup") {
+                                     $location.path('/dashboard');
+                                 };
+                              };
+                  });
+          });
 
 }());

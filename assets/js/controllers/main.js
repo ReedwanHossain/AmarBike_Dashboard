@@ -22,9 +22,8 @@
         
         $scope.signin = function() {
             var formData = {
-                email: $scope.email,
-                password: $scope.password,
-                userType : '1'
+                number: $scope.number,
+                password: $scope.password
             }
 
             Auth.signin(formData, function(res) {

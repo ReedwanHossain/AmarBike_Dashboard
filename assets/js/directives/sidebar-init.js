@@ -7,6 +7,7 @@
             return {
                 link: function (scope, element, attr) {
                     console.log(element.data('image'));
+                    var md, misc, $sidebar;
                     md = {
     misc: {
         navbar_menu_visible: 0,
@@ -16,7 +17,7 @@
 
     checkSidebarImage: function() {
         $sidebar = element;
-        image_src = $sidebar.data('image');
+        var image_src = $sidebar.data('image');
 
         if (image_src !== undefined) {
             var sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>';
@@ -230,7 +231,7 @@
         md.misc.sidebar_mini_active = true;
     }
 
-    window_width = 100%
+     var window_width = 100%
 
     // check if there is an image set for the sidebar's background
     md.checkSidebarImage();

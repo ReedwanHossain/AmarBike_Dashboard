@@ -17,7 +17,7 @@
                             <th>Id
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
-                            <th>Driver ID
+                            <th>Driver Name
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
 
@@ -75,7 +75,7 @@
                     <tbody>
                         <tr ng-repeat="ride in ride_list | filter:query | startFrom:currentPage*pageSize | limitTo:pageSize| orderBy:sortKey:reverse">
                             <td class="">{{ride.id}}</td>
-                            <td class="">{{ride.driver_id}}</td>
+                            <td class="">{{ride.name}}</td>
                             <td class="">{{ride.pickup_time}}</td>
                             <td class="">{{ride.pname}}</td>
                             <td class="">{{ride.pnumber}}</td>

@@ -18,6 +18,7 @@
     $scope.currentPage = 0;
     $scope.pageSize = 10;
     $scope.query = '';
+    $scope.ride ={};
 
     $scope.getData = function () {
       // needed for the pagination calc
@@ -136,6 +137,30 @@ $scope.$watch('query', function(newValue,oldValue){
                 });
 
         };
+
+        $scope.approve_driver = function(id, status) {
+            $http({
+                    method: 'GET',
+                    url: urls.APPROVE_DRIVER+id,
+                    transformResponse: [function (data) {
+                            return data;
+                        }],
+                    transformResponse: [function (data) {
+                        return data;
+                    }],
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            })
+            .success(function(res) {
+                $scope.ride.isApproved = !$scope.ride.isApproved;
+                console.log($scope.ride.isApproved);
+                swal(res);
+            })
+            .error(function(err) {
+                $scope.ride.isApproved = tempStatus;
+            })
+        };
+
+
         // $scope.openWindow = function(uCode) {
         //     $window.open('https://barikoi.com/#/code/' + uCode, 'BariKoi?', 'width=500,height=400');
         // }
