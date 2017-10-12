@@ -1,6 +1,6 @@
 <div>
     <div class="container-fluid" style="background:white">
-<h4>Rider List</h4>
+<h4>Passenger List</h4>
              <form>
     <div class="form-group">
      <div class="input-group input-group-lg add-on">
@@ -21,16 +21,12 @@
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
 
-                            <th>User_Id
-                                <span class="glyphicon sort-icon" ng-show="sortKey=='created_at'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-                            </th>
 
                             <th>Cell Number
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='pname'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
 
-                            <th>Approval Status</th>
-                            <th>User Status</th>
+<!--                             <th>User Status</th> -->
 
 
 
@@ -72,23 +68,8 @@
                         <tr ng-repeat="ride in ride_list | filter:query | startFrom:currentPage*pageSize | limitTo:pageSize| orderBy:sortKey:reverse">
                             <td class="">{{ride.id}}</td>
                             <td class="">{{ride.name}}</td>
-                            <td class="">{{ride.user_id}}</td>
                             <td class="">{{ride.number}}</td>
-                            <td>
-                                 <div class="togglebutton">
-                      <label>
-                          <input type="checkbox" ng-model="ride.isApproved" ng-click="approve_driver(ride.user_id, ride.isApproved)"  ng-true-value="1" ng-false-value="0" ng-disabled="ride.isApproved==1"><span class="toggle"></span>{{ride.isApproved && 'Approved' || 'Not Approved'}}
-                        <!-- <a class="btn pull-right" ng-class="{true: 'btn-primary', false: 'btn-danger'}[!ride.isApproved]" ng-model="ride.isApproved" ng-click="approve_driver">{{!ride.isApproved && 'Archive' || 'Unarchive'}} patient</a>
- -->
-                      </label>
-                    </div>
-                            </td>
-
-                            <td>
-                                  <button type="button"  class="btn btn-danger btn-round" ng-click="change_user_status(ride.user_id)" ng-disabled="ride.type!=2" ng-class="{'btn-warning': ride.type, 'btn-danger': !ride.type}">
-                                  <i class="material-icons">person</i>D2P
-                                  </button>
-                            </td>
+                           
                              <!-- <td class="">{{ride.time}}</td>
                              <td class="" >{{ride.app_fare}}</td> -->
                           <!--  <td class="text-left" ng-click="openWindow(location.uCode)">{{location.uCode}}</td>-->

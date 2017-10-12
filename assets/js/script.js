@@ -8,7 +8,7 @@
         AUTH_URI : 'https://amarbike.tk/api/auth/login',
         RIDE_LOG : 'http://amarbike.tk/api/get/available',
         GPS_TRACK : 'http://amarbike.tk/api/get/location',
-        GET_PASSENGER : 'http://amarbike.tk/api/get/passenger',
+        GET_PASSENGER : 'http://amarbike.tk/api/all/passenger',
         CREATE_RIDE : 'https://amarbike.tk/api/bot/ride/create',
         FINISHED_RIDE : 'https://amarbike.tk/api/get/finished',
         BOOKED_RIDE : 'https://amarbike.tk/api/get/booked',
@@ -25,6 +25,7 @@
         CANCEL_RIDE : 'https://amarbike.tk/api/ride/cancel/',
         UPDATE_RIDE : 'https://amarbike.tk/api/ride/edit/',
         APPROVE_DRIVER : 'https://amarbike.tk/api/driver/approve/',
+        CONVERT_PASSENGER : 'https://amarbike.tk/api/driver/convert/',
 
     });
 
@@ -87,6 +88,14 @@
                 url: '/rider/list',
                 templateUrl: 'examples/rider-list.html',
                 controller: 'RiderList',
+                authentication : true
+
+            })
+
+            .state('main.passengerList', {
+                url: '/passenger/list',
+                templateUrl: 'examples/passenger-list.html',
+                controller: 'PassengerList',
                 authentication : true
 
             })

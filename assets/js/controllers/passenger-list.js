@@ -3,7 +3,7 @@
 
     angular
         .module('amarbike')
-        .controller('RiderList', RiderList)
+        .controller('PassengerList', PassengerList)
         .filter('startFrom', function() {
             return function(input, start) {
                 start = +start; //parse to int
@@ -11,9 +11,9 @@
             }
         });
 
-    RiderList.$inject = ['$rootScope', '$scope', '$http', '$window', '$location', '$state', '$filter', 'urls', 'Auth'];
+    PassengerList.$inject = ['$rootScope', '$scope', '$http', '$window', '$location', '$state', '$filter', 'urls', 'Auth'];
 
-    function RiderList($rootScope, $scope, $http, $window, $location, $state, $filter, urls, Auth) {
+    function PassengerList($rootScope, $scope, $http, $window, $location, $state, $filter, urls, Auth) {
 
     $scope.currentPage = 0;
     $scope.pageSize = 10;
@@ -43,7 +43,7 @@
     }
 
 
-     Auth.getlocations(urls.GPS_TRACK, function(res) {
+     Auth.getlocations(urls.GET_PASSENGER, function(res) {
             $scope.ride_list = res;
 
         },
@@ -102,7 +102,7 @@ $scope.$watch('query', function(newValue,oldValue){
                 function(){
                      Auth.delete_plc(urls.REFUSE_RIDE, id,
                         function(res) {
-                            $state.go('main.RiderList', {}, { reload: true });
+                            $state.go('main.PassengerList', {}, { reload: true });
                              swal("Deleted!", "Ride has been deleted.", "success");
                         },
                         function(err) {
@@ -127,7 +127,7 @@ $scope.$watch('query', function(newValue,oldValue){
                 function(){
                      Auth.delete_plc(urls.CANCEL_RIDE, id,
                         function(res) {
-                            $state.go('main.RiderList', {}, { reload: true });
+                            $state.go('main.PassengerList', {}, { reload: true });
                              swal("Deleted!", "Ride has been Canceled.", "success");
                         },
                         function(err) {
@@ -170,12 +170,12 @@ $scope.$watch('query', function(newValue,oldValue){
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             })
             .success(function(res) {
-                $scope.ride.type = false;
-                console.log($scope.ride.type);
+                //$scope.ride.isApproved = !$scope.ride.isApproved;
+                console.log($scope.ride.isApproved);
                 swal(res);
             })
             .error(function(err) {
-                swal("Not changed");
+                //$scope.ride.isApproved = tempStatus;
             })
         };
 
